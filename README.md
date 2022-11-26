@@ -531,12 +531,416 @@ Berdasarkan total IP dan netmask yang dibutuhkan, Subnet besar yang dibentuk mem
 
 #### Membuat topologi dengan _GNS3_
 
+![Topologi GNS3 CIDR](/screenshot/CIDR_TopologiGNS3.png)
+
 #### Mengatur _Network Configuration_ masing-masing interface pada setiap perangkat
 
+Sesuaikan network configuration node pada GNS3 sebagai berikut sesuai dengan interface yang dibuat pada topologi:
+
+- **The Resonance**
+  ```
+  auto eth0
+  iface eth0 inet dhcp
+
+  #A7
+  auto eth1
+  iface eth1 inet static
+    address 192.184.132.1
+    netmask 255.255.255.252
+
+  #A8
+  auto eth2
+  iface eth2 inet static
+    address 192.184.130.1
+    netmask 255.255.255.252
+
+  #A10
+  auto eth3
+  iface eth3 inet static
+    address 192.184.96.1
+    netmask 255.255.255.252
+
+  #A6
+  auto eth4
+  iface eth4 inet static
+    address 192.184.32.1
+    netmask 255.255.255.252
+  ```
+- **The Magical**
+  ```
+  #A8
+  auto eth0
+  iface eth0 inet static
+    address 192.184.130.2
+    netmask 255.255.255.252
+          gateway 192.184.130.1
+
+  #A9
+  auto eth1
+  iface eth1 inet static
+    address 192.184.128.1
+    netmask 255.255.254.0
+  ```
+- **The Order**
+  ```
+  #A6
+  auto eth0
+  iface eth0 inet static
+    address 192.184.32.2
+    netmask 255.255.255.252
+
+  #A4
+  auto eth1
+  iface eth1 inet static
+    address 192.184.8.1
+    netmask 255.255.255.252
+
+  #A5
+  auto eth2
+  iface eth2 inet static
+    address 192.184.16.1
+    netmask 255.255.255.192
+  ```
+- **The Minister**
+  ```
+  #A4
+  auto eth0
+  iface eth0 inet static
+    address 192.184.8.2
+    netmask 255.255.255.252
+
+  #A2
+  auto eth1
+  iface eth1 inet static
+    address 192.184.5.1
+    netmask 255.255.255.252
+
+  #A1
+  auto eth2
+  iface eth2 inet static
+    address 192.184.0.1
+    netmask 255.255.252.0
+  ```
+- **The Dauntless**
+  ```
+  #A2
+  auto eth0
+  iface eth0 inet static
+    address 192.184.5.2
+    netmask 255.255.255.252
+
+  #A3
+  auto eth1
+  iface eth1 inet static
+    address 192.184.4.1
+    netmask 255.255.255.0
+  ```
+- **The Instrument**
+  ```
+  #A10
+  auto eth0
+  iface eth0 inet static
+    address 192.184.96.2
+    netmask 255.255.255.252
+
+  #A12
+  auto eth1
+  iface eth1 inet static
+    address 192.184.73.1
+    netmask 255.255.255.252
+
+  #A15
+  auto eth2
+  iface eth2 inet static
+    address 192.184.68.1
+    netmask 255.255.255.252
+
+  #A11
+  auto eth3
+  iface eth3 inet static
+    address 192.184.80.1
+    netmask 255.255.255.128
+  ```
+- **The Profound**
+  ```
+  #A12
+  auto eth0
+  iface eth0 inet static
+    address 192.184.73.2
+    netmask 255.255.255.252
+
+  #A13
+  auto eth1
+  iface eth1 inet static
+    address 192.184.72.1
+    netmask 255.255.255.128
+
+  #A14
+  auto eth2
+  iface eth2 inet static
+    address 192.184.72.129
+    netmask 255.255.255.128
+  ```
+- **The Firefist**
+  ```
+  #A15
+  auto eth0
+  iface eth0 inet static
+    address 192.184.68.2
+    netmask 255.255.255.252
+
+  #A16
+  auto eth1
+  iface eth1 inet static
+    address 192.184.66.1
+    netmask 255.255.254.0
+
+  #A17
+  auto eth2
+  iface eth2 inet static
+    address 192.184.64.1
+    netmask 255.255.255.0
+  ```
+- **The Queen**
+  ```
+  #A17
+  auto eth0
+  iface eth0 inet static
+    address 192.184.64.3
+    netmask 255.255.255.0
+
+  #A18
+  auto eth1
+  iface eth1 inet static
+    address 192.184.65.1
+    netmask 255.255.255.252
+  ```
+
+##### Client
+
+- **Johan (100 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.4.3
+	netmask 255.255.255.0
+	gateway 192.184.4.1
+```
+
+- **Phanora (150 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.4.2
+	netmask 255.255.255.0
+	gateway 192.184.4.1
+```
+
+- **Guideau (1000 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.0.2
+	netmask 255.255.252.0
+	gateway 192.184.0.1
+```
+
+- **Ashaf (50 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.16.2
+	netmask 255.255.255.192
+	gateway 192.184.16.1
+```
+
+- **Haines (70 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.128.2
+	netmask 255.255.254.0
+	gateway 192.184.128.1
+```
+
+- **Corvekt (200 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.128.3
+	netmask 255.255.254.0
+	gateway 192.184.128.1
+```
+
+- **Matt Cugat (120 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.80.2
+	netmask 255.255.255.128
+	gateway 192.184.80.1
+```
+
+- **Spendrow (120 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.72.2
+	netmask 255.255.255.128
+	gateway 192.184.72.1
+```
+
+- **Helga (70 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.72.130
+	netmask 255.255.255.128
+	gateway 192.184.72.129
+```
+
+- **Oakleave (500 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.66.2
+	netmask 255.255.254.0
+	gateway 192.184.66.1
+```
+
+- **Keith (210 Host)**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.64.2
+	netmask 255.255.255.0
+	gateway 192.184.64.1
+```
+
+##### Server
+
+- **The Beast**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.132.2
+	netmask 255.255.255.252
+	gateway 192.184.132.1
+```
+
+- **The Witch**
+
+```
+auto eth0
+iface eth0 inet static
+	address 192.184.65.2
+	netmask 255.255.255.252
+	gateway 192.184.65.1
+```
+
 #### _Statics Route Configuration_
+
+Berikut adalah konfigurasi routing yang kelompok kami gunakan.
+
+- **The Resonance**
+
+```
+A9 -> route add -net 192.184.128.0 netmask 255.255.254.0 gw 192.184.130.2
+E1 -> route add -net 192.184.8.0 netmask 255.255.255.252 gw 192.184.32.2
+F1 -> route add -net 192.184.64.0 netmask 255.255.224.0 gw 192.184.96.2
+```
+
+- **The Order**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.32.1
+C1 -> route add -net 192.184.0.0 netmask 255.255.248.0 gw 192.184.8.2
+```
+
+- **The Minister**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.8.1
+A3 -> route add -net 192.184.4.0 netmask 255.255.255.0 gw 192.184.5.2
+```
+
+- **The Dauntless**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.5.1
+
+```
+
+- **The Magical**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.130.1
+```
+
+- **The Instrument**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.96.1
+C3 -> route add -net 192.184.72.0 netmask 255.255.255.0 gw 192.184.73.2
+C2 -> route add -net 192.184.64.0 netmask 255.255.252.0 gw 192.184.68.2
+```
+
+- **The Profound**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.73.1
+```
+
+- **The Firefist**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.68.1
+A18 -> route add -net 192.184.65.0 netmask 255.255.255.252 gw 192.184.64.3
+```
+
+- **The Queen**
+
+```
+Default -> route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.184.64.1
+```
+
+### Testing
+
+Dilakukan beberapa testing sebagai berikut:
+
+- `Johan` -> `The Witch`
+- `Guideau` -> `Oakleave`
+- `Ashaf` -> `Helga`
+- `Matt Cugat` -> `The Beast`
+- `Haines` -> `Spendrow`
+
+Hasil Testing:
+
+- `Johan` -> `The Witch`
+![CIDR Test 1](/screenshot/CIDR_Test1.png)
+- `Guideau` -> `Oakleave`
+![CIDR Test 2](/screenshot/CIDR_Test2.png)
+- `Ashaf` -> `Helga`
+![CIDR Test 3](/screenshot/CIDR_Test3.png)
+- `Matt Cugat` -> `The Beast`
+![CIDR Test 4](/screenshot/CIDR_Test4.png)
+- `Haines` -> `Spendrow`
+![CIDR Test 5](/screenshot/CIDR_Test5.png)
 
 ## Kendala
 
 Berikut adalah kendala kami selama mengerjakan praktikum modul 4 ini.
 
--
+- Routing untuk CIDR sempat tidak dibuat pada subnet yang lebih tinggi, sehingga routing table berisi lebih banyak subnet tingkatan A
