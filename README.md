@@ -447,7 +447,6 @@ Hasil Testing:
 | A16       | 501       | /23     |
 | A17       | 212       | /24     |
 | A18       | 2         | /30     |
-| **Total** | **2618**  | **/20** |
 
 ![Topologi CIDR](/screenshot/Topologi%20CIDR-2.PNG)
 
