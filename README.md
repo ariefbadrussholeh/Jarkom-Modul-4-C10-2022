@@ -425,11 +425,108 @@ Hasil Testing:
 
 #### Menentukan jumlah subnet yang ada pada topologi
 
+![Topologi CIDR](/screenshot/Topologi%20CIDR-1.PNG)
+
+| Subnet    | Jumlah IP | Netmask |
+| --------- | --------- | ------- |
+| A1        | 1001      | /22     |
+| A2        | 2         | /30     |
+| A3        | 251       | /24     |
+| A4        | 2         | /30     |
+| A5        | 51        | /26     |
+| A6        | 2         | /30     |
+| A7        | 2         | /30     |
+| A8        | 2         | /30     |
+| A9        | 271       | /23     |
+| A10       | 2         | /30     |
+| A11       | 121       | /25     |
+| A12       | 2         | /30     |
+| A13       | 121       | /25     |
+| A14       | 71        | /25     |
+| A15       | 2         | /30     |
+| A16       | 501       | /23     |
+| A17       | 212       | /24     |
+| A18       | 2         | /30     |
+| **Total** | **2618**  | **/20** |
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-2.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-3.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-4.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-5.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-6.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-7.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-8.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-9.PNG)
+
+![Topologi CIDR](/screenshot/Topologi%20CIDR-10.PNG)
+
 #### Menentukan jumlah alamat IP yang dibutuhkan oleh tiap subnet
+
+| Subnet    | Jumlah IP | Netmask |
+| --------- | --------- | ------- |
+| A1        | 1001      | /22     |
+| A2        | 2         | /30     |
+| A3        | 251       | /24     |
+| A4        | 2         | /30     |
+| A5        | 51        | /26     |
+| A6        | 2         | /30     |
+| A7        | 2         | /30     |
+| A8        | 2         | /30     |
+| A9        | 271       | /23     |
+| A10       | 2         | /30     |
+| A11       | 121       | /25     |
+| A12       | 2         | /30     |
+| A13       | 121       | /25     |
+| A14       | 71        | /25     |
+| A15       | 2         | /30     |
+| A16       | 501       | /23     |
+| A17       | 212       | /24     |
+| A18       | 2         | /30     |
+
+| Subnet    | Penggabungan         |
+| --------- | -------------------- |
+| B1(/23)   | A2 (/30) dan A3 (/24)|
+| B2(/23)   | A17(/24) dan A18(/30)|
+|                                  |
+| C1(/21)   | A1 (/22) dan B1 (/23)|
+| C2(/22)   | A16(/23) dan B2 (/23)|
+| C3(/24)   | A13(/25) dan A14(/25)|
+|                                  |
+| D1(/20)   | A4 (/30) dan C1 (/21)|
+| D2(/21)   | A15(/30) dan C2 (/22)|
+| D3(/23)   | A12(/30) dan C3 (/24)|
+|                                  |
+| E1(/19)   | A5 (/26) dan D1 (/20)|
+| E2(/20)   | D2 (/21) dan D3 (/23)|
+|                                  |
+| F1(/19)   | A11(/25) dan E2 (/20)|
+|                                  |
+| G1(/18)   | A6 (/30) dan E1 (/19)|
+| G2(/18)   | A10(/30) dan E2 (/19)|
+| G3(/22)   | A8 (/30) dan E2 (/23)|
+|                                  |
+| H1(/17)   | G1 (/18) dan G2 (/18)|
+| H2(/21)   | A7 (/30) dan G3 (/22)|
+|                                  |
+| I1(/16)   | H1 (/17) dan H2 (/21)|
+| **Total** |       **/16**        |
+
+Berdasarkan total IP dan netmask yang dibutuhkan, Subnet besar yang dibentuk memiliki `NID 192.184.0.0` dengan `Netmask /16`.
 
 #### Menghitung pembagian IP berdasarkan `NID` dan `Netmask` yang didapatkan
 
+![CIDR Pohon](/screenshot/CIDR%20Pohon.PNG)
+
 #### Hasil pembagian IP
+
+![CIDR Pembagian IP](/screenshot/CIDR%20Pembagian%20IP.PNG)
 
 ### Routing
 
