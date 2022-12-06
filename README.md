@@ -1,6 +1,6 @@
-# Jarkom-Modul-3-C10-2022
+# Jarkom-Modul-4-C10-2022
 
-**Laporan Resmi Praktikum Jarkom Modul 3** - _Subnetting & Routing_
+**Laporan Resmi Praktikum Jarkom Modul 4** - _Subnetting & Routing_
 
 #### Anggota Kelompok C10:
 
